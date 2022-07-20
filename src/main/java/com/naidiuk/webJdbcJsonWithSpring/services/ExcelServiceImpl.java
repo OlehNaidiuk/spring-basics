@@ -69,14 +69,16 @@ public class ExcelServiceImpl implements ExcelService {
     }
 
     @Override
-    public void write(List<User> users) {
-        File file = new File ("src/main/resources/Users_info.xlsx");
+    public File write(List<User> users) {
+        File file = new File("src/main/resources/Users_info.xlsx");
 
         try (OutputStream outputStream = new FileOutputStream(file)) {
             XSSFWorkbook usersWorkbook = createWorkbook(users);
             usersWorkbook.write(outputStream);
+            usersWorkbook.close();
+            return file;
         } catch (IOException e) {
-            throw new RuntimeException("Can't find file to write", e);
+            throw new RuntimeException("Can't write data to file", e);
         }
     }
 

@@ -1,14 +1,15 @@
 package com.naidiuk.webJdbcJsonWithSpring.services;
 
 import com.naidiuk.webJdbcJsonWithSpring.dto.UserDto;
+import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
 public interface UserService {
     UserDto save(UserDto userDto);
-    void upload(MultipartFile file);
-    void download();
+    void importFrom(MultipartFile file);
+    Resource export();
     UserDto delete(Integer id);
     UserDto update(UserDto updatedUserDto);
     UserDto findById(Integer id);

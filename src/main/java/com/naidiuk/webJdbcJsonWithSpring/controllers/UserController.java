@@ -6,11 +6,17 @@ import com.naidiuk.webJdbcJsonWithSpring.errors.EmailValidationException;
 import com.naidiuk.webJdbcJsonWithSpring.errors.UserNotFoundException;
 import com.naidiuk.webJdbcJsonWithSpring.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.net.MalformedURLException;
+import java.nio.file.Path;
 import java.util.List;
 
 @RestController
@@ -61,8 +67,12 @@ public class UserController {
     }
 
     @GetMapping("/download")
-    public void downloadToExcelFile() {
-        userService.download();
+    public ResponseEntity<?> download() {
+        Resource resource = userService.export();
+        return ResponseEntity.status(HttpStatus.OK)
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                .body(resource);
     }
 
     @PutMapping
@@ -86,8 +96,8 @@ public class UserController {
     }
 
     @PostMapping("/upload")
-    public void uploadFromExcelFile(@RequestParam("file")MultipartFile file) {
-        userService.upload(file);
+    public void upload(@RequestParam("file")MultipartFile file) {
+        userService.importFrom(file);
     }
 
     @DeleteMapping("/{id}")

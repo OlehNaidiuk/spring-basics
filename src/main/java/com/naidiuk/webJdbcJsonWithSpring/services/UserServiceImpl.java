@@ -8,10 +8,16 @@ import com.naidiuk.webJdbcJsonWithSpring.mappers.UserMapper;
 import com.naidiuk.webJdbcJsonWithSpring.repositories.UserRepository;
 import com.naidiuk.webJdbcJsonWithSpring.util.EmailValidatorUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -34,15 +40,26 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void upload(MultipartFile file) {
+    public void importFrom(MultipartFile file) {
         List<User> users = excelService.read(file);
         userRepository.saveAll(users);
     }
 
     @Override
-    public void download() {
+    public Resource export() {
         List<User> users = userRepository.findAll();
-        excelService.write(users);
+        File fileWithUsers = excelService.write(users);
+        if (fileWithUsers.exists()) {
+            Path filePath = Paths.get(fileWithUsers.getAbsolutePath());
+            try {
+                return new UrlResource(filePath.toUri());
+            } catch (MalformedURLException e) {
+                throw new RuntimeException("Resource not found.");
+            }
+        } else {
+            throw new RuntimeException("File not found.");
+        }
+
     }
 
     @Override
