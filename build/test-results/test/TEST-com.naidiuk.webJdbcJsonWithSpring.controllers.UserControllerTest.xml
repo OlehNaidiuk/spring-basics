@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-04T08:46:39" hostname="PC" time="0.196">
+  <properties/>
+  <testcase name="testUpdateWithWrongId()" classname="com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest" time="0.196"/>
+  <system-out><![CDATA[11:46:37.384 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+11:46:37.392 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+11:46:37.426 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+11:46:37.436 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest], using SpringBootContextLoader
+11:46:37.439 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest]: class path resource [com/naidiuk/webJdbcJsonWithSpring/controllers/UserControllerTest-context.xml] does not exist
+11:46:37.440 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest]: class path resource [com/naidiuk/webJdbcJsonWithSpring/controllers/UserControllerTestContext.groovy] does not exist
+11:46:37.440 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:46:37.440 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:46:37.508 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest]
+11:46:37.560 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Programming\IdeaProjects\web-jdbc-json-with-spring\build\classes\java\main\com\naidiuk\webJdbcJsonWithSpring\Application.class]
+11:46:37.561 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.naidiuk.webJdbcJsonWithSpring.Application for test class com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest
+11:46:37.563 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [com.naidiuk.webJdbcJsonWithSpring.controllers.UserControllerTest]: using defaults.
+11:46:37.563 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+11:46:37.578 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@25a052e6, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@16c640d3, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@499f9ee8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@32fbe084, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@156bb35f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@310fb9f9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4d209ee, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@69c02630, org.springframework.test.context.event.EventPublishingTestExecutionListener@21f9911c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6d7534ab, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@79fccd92, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1165853b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7c79977a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@38ed3432, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2762eee0]
+11:46:37.581 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@715dfc69 testClass = UserControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@66498146 testClass = UserControllerTest, locations = '{}', classes = '{class com.naidiuk.webJdbcJsonWithSpring.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@985e00b, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4e396537, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@af18ee6f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@3d981dc9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@46099bcf, [ImportsContextCustomizer@12496851 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@398102d5, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6f895f5b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@1be11a35, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.0)
+
+2022-07-04 11:46:37.909  INFO 12188 --- [    Test worker] c.n.w.controllers.UserControllerTest     : Starting UserControllerTest using Java 1.8.0_332 on PC with PID 12188 (started by olegn in D:\Programming\IdeaProjects\web-jdbc-json-with-spring)
+2022-07-04 11:46:37.910  INFO 12188 --- [    Test worker] c.n.w.controllers.UserControllerTest     : No active profile set, falling back to 1 default profile: "default"
+2022-07-04 11:46:39.146  INFO 12188 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-07-04 11:46:39.146  INFO 12188 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-07-04 11:46:39.147  INFO 12188 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2022-07-04 11:46:39.168  INFO 12188 --- [    Test worker] c.n.w.controllers.UserControllerTest     : Started UserControllerTest in 1.552 seconds (JVM running for 2.518)
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /users
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"82"]
+             Body = {"id":99,"name":"Elon","surname":"Mask","salary":3243242,"workExperienceYears":21}
+    Session Attrs = {}
+
+Handler:
+             Type = com.naidiuk.webJdbcJsonWithSpring.controllers.UserController
+           Method = com.naidiuk.webJdbcJsonWithSpring.controllers.UserController#update(UserDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"error":"произошла ошибка","message":"User with id = 99 doesn't exist."}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
